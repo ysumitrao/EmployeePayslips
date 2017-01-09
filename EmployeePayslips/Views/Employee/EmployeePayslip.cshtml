@@ -1,0 +1,52 @@
+﻿@model EmployeePayslips.Domain.DomainModels.EmployeeModel
+@{
+    ViewBag.Title = "Generated Payslip";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("EmployeeDetails", "Employee", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Person.PersonName, new { @class = "col-md-2 control-label control-label-nopadding" })
+        <div class="col-md-10">
+            <label class="label-normal-font">@Html.DisplayFor(m => m.Person.PersonName)</label>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PayPeriod, new { @class = "col-md-2 control-label control-label-nopadding" })
+        <div class="col-md-10">
+            <label class="label-normal-font">@Html.DisplayFor(m => m.PayPeriod)</label>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.GrossIncome, new { @class = "col-md-2 control-label control-label-nopadding" })
+        <div class="col-md-10">
+            <label class="label-normal-font">@Html.DisplayFor(m => m.GrossIncome)</label>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.IncomeTax, new { @class = "col-md-2 control-label control-label-nopadding" })
+        <div class="col-md-10">
+            <label class="label-normal-font">@Html.DisplayFor(m => m.IncomeTax)</label>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NetIncome, new { @class = "col-md-2 control-label control-label-nopadding" })
+        <div class="col-md-10">
+            <label class="label-normal-font">@Html.DisplayFor(m => m.NetIncome)</label>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SuperAmount, new { @class = "col-md-2 control-label control-label-nopadding" })
+        <div class="col-md-10">
+            <label class="label-normal-font">@Html.DisplayFor(m => m.SuperAmount)</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Back" />
+        </div>
+    </div>
+}
